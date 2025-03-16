@@ -1,0 +1,31 @@
+{
+  "name": "git-batch-clone",
+  "version": "1.0.0",
+  "description": "批量执行“git clone”命令",
+  "keywords": [
+    "git clone",
+    "cli",
+    "node"
+  ],
+  "author": "Allen-He",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "core.js",
+  "bin": {
+    "git-batch-clone": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "shelljs": "^0.8.5"
+  },
+  "files": [
+    "core.js",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
