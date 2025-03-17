@@ -1,6 +1,6 @@
 {
   "name": "git-batch-clone-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/Allen-He/git-batch-clone.git",
   "description": "批量执行“git clone”命令",
   "keywords": [
