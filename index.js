@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { program } = require("commander");
 const { batchClone } = require("./core");
+const { version } = require("./package.json"); 
 
 function parseJsonFile(content) {
   try {
@@ -16,6 +17,8 @@ function parseJsonFile(content) {
     throw new Error(`解析JSON失败: ${error.message}`);
   }
 }
+
+program.version(version, "-v, --version", "显示当前版本号");
 
 program
   .description('一个批量执行"git clone"命令的cli工具')
@@ -35,13 +38,15 @@ program
       const fileContent = fs.readFileSync(filepath, "utf8");
       const reposList = parseJsonFile(fileContent);
 
-      console.log(`总数: ${resReposList.length}`);
+      console.log('开始克隆');
       console.log('====================================')
     
       const res = await batchClone(reposList);
 
       console.log('====================================')
-      console.log(`结果 (成功: ${res.success} | 失败: ${res.fail}): \n${res.remind}`);
+      console.log('克隆完成');
+      console.log(`总数量（已去重）: ${reposList.length}`);
+      console.log(`克隆结果：成功: ${res.success} | 失败: ${res.fail}): \n${res.remind}`);
     } catch (error) {
       console.error('出错啦:', error.message);
       process.exit(1);

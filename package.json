@@ -1,5 +1,5 @@
 {
-  "name": "git-batch-clone",
+  "name": "git-batch-clone-cli",
   "version": "1.0.0",
   "description": "批量执行“git clone”命令",
   "keywords": [
@@ -15,11 +15,19 @@
     "git-batch-clone": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it",
+    "release-major": "pnpm release major",
+    "release-minor": "pnpm release minor",
+    "release-patch": "pnpm release patch"
   },
   "dependencies": {
     "commander": "^13.1.0",
     "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.0",
+    "release-it": "^18.1.2"
   },
   "files": [
     "core.js",
