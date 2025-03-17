@@ -1,6 +1,6 @@
 {
   "name": "git-batch-clone-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "批量执行“git clone”命令",
   "keywords": [
     "git clone",
